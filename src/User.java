@@ -22,16 +22,16 @@ public class User
         c_nam = n;
     }
 
-    public void setA(String a)
+    public void setAddress(String address)
     {
-        a = a;
+      this.address = address;
     }
 
-    public int geti(){ return c_id; }
+    public int getId(){ return c_id; }
 
-    public String getn(){ return c_nam; }
+    public String getName(){ return c_nam; }
 
-    public String geta(){ return "STREETNAME"; }
+    public String getAddress(){ return "STREETNAME"; }
 
     @Override
     public boolean equals(Object o){
