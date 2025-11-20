@@ -7,11 +7,13 @@ public class Persister
     {
         File file = new File("users.txt");
         FileWriter fileWriter = new FileWriter(file);
-        BufferedWriter bw = new BufferedWriter(fileWriter);
-        for(int x=0; x<=users.size(); x++)
+        BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);
+        for(int x=0; x<users.size(); x++)
         {
-            bw.write(users.get(x).c_nam);
-            bw.write(users.get(x).getId());
+            bufferedWriter.write(String.valueOf(users.get(x).name));
+            bufferedWriter.write(users.get(x).getId());
+
         }
+        bufferedWriter.close();
     }
 }

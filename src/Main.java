@@ -1,3 +1,5 @@
+
+
 public class Main
 {
     public static void main(String[] args)
@@ -11,7 +13,7 @@ public class Main
         list.addUser(u2);
         list.addUser(u3);
 
-        System.out.println(list.getUsers(new User("Bob", 11)));
+        System.out.println(list.getUsers());
 
         Persister.s(list);
     }
