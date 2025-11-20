@@ -1,4 +1,4 @@
-
+import java.io.IOException;
 
 public class Main
 {
@@ -15,6 +15,11 @@ public class Main
 
         System.out.println(list.getUsers());
 
-        Persister.s(list);
+      try {
+        Persister.s(list.getUsers());
+      } catch (IOException e) {
+        e.printStackTrace();
+      }
+
     }
 }

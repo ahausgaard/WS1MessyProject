@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class User
 {
     public int id;
@@ -6,7 +8,7 @@ public class User
 
     public User(String name, int id){
         this.id = id;
-        if(name.length() < 0 || name.length() > 100) // Testing length
+        if(name.isEmpty() || name.length() > 100) // Testing length
         {
             return; //If string is invalid, we dont try to store it
         }
@@ -15,11 +17,8 @@ public class User
 
     public void setName(String name)
     {
-        if(name.length() == 0)
-        {
-            return; //If string is invalid, we dont try to store it
-        }
-        this.name = name;
+        if(!name.isEmpty())
+          this.name = name;
     }
 
     public void setAddress(String address)
@@ -31,13 +30,18 @@ public class User
 
     public String getName(){ return name; }
 
-    public String getAddress(){ return "STREETNAME"; }
+    public String getAddress(){ return address; }
 
     @Override
     public boolean equals(Object o){
-        if(o instanceof User u){
-            return u.name == name;
+        if(o instanceof User user){
+            return Objects.equals(user.name, name);
         }
         return false;
     }
+
+  @Override public int hashCode()
+  {
+    return Objects.hash(id, name, address);
+  }
 }
