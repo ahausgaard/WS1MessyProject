@@ -16,7 +16,7 @@ public class Main
         System.out.println(list.getUsers());
 
       try {
-        Persister.s(list.getUsers());
+        Persister.persistUsers(list.getUsers());
       } catch (IOException e) {
         e.printStackTrace();
       }
