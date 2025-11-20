@@ -6,13 +6,15 @@ public class UserList
 
     public void addUser(User user)
     {
-        if(user == null)
+        if(user != null)
         {
           this.users.add(user);
         }
     }
 
-    public ArrayList<User> getUsers()
+
+
+  public ArrayList<User> getUsers()
     {
         return this.users;
     }

@@ -10,7 +10,7 @@ public class User
         this.id = id;
         if(name.isEmpty() || name.length() > 100) // Testing length
         {
-            return; //If string is invalid, we dont try to store it
+            return;
         }
         this.name = name;
     }
@@ -32,7 +32,13 @@ public class User
 
     public String getAddress(){ return address; }
 
-    @Override
+  @Override public String toString()
+  {
+    return "User{" + "id=" + id + ", name='" + name + '\'' + ", address='"
+        + address + '\'' + '}';
+  }
+
+  @Override
     public boolean equals(Object o){
         if(o instanceof User user){
             return Objects.equals(user.name, name);
